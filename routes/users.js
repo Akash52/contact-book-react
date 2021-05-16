@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator')
 
 const User = require('../models/User')
@@ -8,6 +9,7 @@ const User = require('../models/User')
 //@desc Register a user
 //@acess Public
 
+//Route & Validation
 router.post(
   '/',
   [
@@ -17,14 +19,44 @@ router.post(
       min: 6,
     }),
   ],
-  (req, res) => {
+
+  //Return Errors
+  async (req, res) => {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() })
     }
 
-    res.send('Passed')
+    //Destructure Properties
+
+    const { name, email, password } = req.body
+
+    try {
+      //Check if user already exist
+
+      let user = await User.findOne({ email })
+
+      if (user) {
+        return res.status(400).json({ msg: 'User already exists' })
+      }
+
+      //Create new User
+      user = new User({
+        name,
+        email,
+        password,
+      })
+
+      // Encrypt Password
+      const salt = await bcrypt.genSalt(10)
+      user.password = await bcrypt.hash(password, salt)
+      //Save user to DataBase
+      await user.save()
+    } catch (err) {
+      console.error(err.message)
+      res.status(500).send('Server Error')
+    }
   }
 )
 
