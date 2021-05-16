@@ -6,6 +6,10 @@ const app = express()
 //Connect Database
 connectDB()
 
+//Init Middleware
+
+app.use(express.json({ extended: false }))
+
 //HTTP GET REQUEST
 app.get('/', (req, res) => {
   res.json({ name: 'Akash', roll: '19it197' })
