@@ -1,10 +1,11 @@
 import React from 'react'
-import Card from './components/Layout/Card/Card'
 
 const App = () => {
   return (
     <div>
-      <Card />
+      <div className="text-8xl text-gray-800 hover:text-gray-600">
+        Hello World !
+      </div>
     </div>
   )
 }
