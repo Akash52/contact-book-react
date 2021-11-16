@@ -1,4 +1,29 @@
+import { useState, useContext } from 'react'
+import ContactContext from '../Context/Contact/contactContext'
+
 const ContactForm = () => {
+  const contactContext = useContext(ContactContext)
+  const [contact, setContact] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    type: 'personal',
+  })
+  const { name, email, phone, type } = contact
+
+  const onChange = (e) =>
+    setContact({ ...contact, [e.target.name]: e.target.value })
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    contactContext.addContact(contact)
+    setContact({
+      name: '',
+      email: '',
+      phone: '',
+      type: 'personal',
+    })
+  }
   return (
     <div className="flex flex-col justify-center xs:mx-5 sm:mx-4 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -6,21 +31,17 @@ const ContactForm = () => {
           Add Contact
         </h2>
       </div>
-
       <div className="mt-4 shadow-md sm:mx-auto sm:w-full hover:shadow-sm sm:max-w-md">
         <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
-          <form
-            className="space-y-6"
-            action="#"
-            autoComplete="off"
-            method="POST"
-          >
+          <form className="space-y-6" onSubmit={onSubmit} autoComplete="off">
             <div>
               <div className="mt-1">
                 <input
                   id="name"
                   name="name"
                   type="name"
+                  value={name}
+                  onChange={onChange}
                   required
                   placeholder="Name"
                   className="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -33,7 +54,9 @@ const ContactForm = () => {
                   id="email"
                   name="email"
                   type="email"
+                  value={email}
                   placeholder="Email"
+                  onChange={onChange}
                   required
                   className="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
@@ -46,7 +69,9 @@ const ContactForm = () => {
                   id="phone"
                   name="phone"
                   type="phone"
+                  value={phone}
                   required
+                  onChange={onChange}
                   placeholder="Phone"
                   className="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
@@ -56,10 +81,13 @@ const ContactForm = () => {
             <div className="flex items-center ">
               <div className="flex items-center">
                 <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
+                  id="type"
+                  name="type"
+                  type="radio"
+                  value="personal"
                   className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                  checked={type === 'personal'}
+                  onChange={onChange}
                 />
                 <label
                   htmlFor="remember-me"
@@ -71,9 +99,12 @@ const ContactForm = () => {
               <div className="flex items-center">
                 <input
                   id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
+                  name="type"
+                  type="radio"
+                  value="professional"
                   className="w-4 h-4 ml-2 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                  checked={type === 'professional'}
+                  onChange={onChange}
                 />
                 <label
                   htmlFor="remember-me"
