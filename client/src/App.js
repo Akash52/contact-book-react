@@ -11,9 +11,6 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-          <div className="text-gray-800 cursor-pointer text-8xl hover:text-gray-600">
-            Hello World !
-          </div>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
