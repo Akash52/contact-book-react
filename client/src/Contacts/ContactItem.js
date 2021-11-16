@@ -1,9 +1,18 @@
+import { useContext } from 'react'
+import ContactContext from '../Context/Contact/contactContext'
 const ContactItem = ({ contact }) => {
+  const contactContext = useContext(ContactContext)
+  const { deleteContact } = contactContext
   const { id, name, email, phone, type } = contact
+
+  const onDelete = () => {
+    deleteContact(id)
+  }
+
   return (
     <div className="flex items-center justify-center w-full px-6 mb-3 dark:bg-gray-900 ">
       <div>
-        <div className="flex flex-col justify-between h-64 max-w-sm px-4 py-5 bg-white border border-gray-400 rounded-lg shadow-xl cursor-pointer hover:shadow-md dark:bg-gray-800">
+        <div className="flex flex-col justify-between h-64 max-w-sm px-4 py-5 bg-white border border-gray-400 rounded-lg shadow-xl cursor-pointer hover:shadow-md dark:bg-gray-800 ">
           <div className="flex justify-between">
             <h4 className="mb-3 font-bold text-gray-800 dark:text-gray-100">
               {name}
@@ -60,7 +69,7 @@ const ContactItem = ({ contact }) => {
 
           <div>
             <div className="flex items-center justify-between text-gray-800">
-              <div className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full">
+              <div className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-indigo-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="cursor-pointer icon icon-tabler icon-tabler-pencil"
@@ -78,22 +87,26 @@ const ContactItem = ({ contact }) => {
                   <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
                 </svg>
               </div>
-              <div className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full">
+              <button
+                onClick={onDelete}
+                className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-red-700"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="cursor-pointer"
                   width={20}
                   height={20}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
                   <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                    clip-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
           </div>
         </div>
