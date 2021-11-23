@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-2 mb-3 bg-gray-900 bg-blueGray-500">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-2 mb-3 bg-gray-900">
         <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
           <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
             <Link

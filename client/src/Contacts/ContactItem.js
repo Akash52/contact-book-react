@@ -2,11 +2,12 @@ import { useContext } from 'react'
 import ContactContext from '../Context/Contact/contactContext'
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext)
-  const { deleteContact } = contactContext
+  const { deleteContact, setCurrent, clearCurrent } = contactContext
   const { id, name, email, phone, type } = contact
 
   const onDelete = () => {
     deleteContact(id)
+    clearCurrent()
   }
 
   return (
@@ -69,7 +70,10 @@ const ContactItem = ({ contact }) => {
 
           <div>
             <div className="flex items-center justify-between text-gray-800">
-              <div className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-indigo-700">
+              <button
+                onClick={() => setCurrent(contact)}
+                className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-indigo-700"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="cursor-pointer icon icon-tabler icon-tabler-pencil"
@@ -86,7 +90,7 @@ const ContactItem = ({ contact }) => {
                   <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
                   <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
                 </svg>
-              </div>
+              </button>
               <button
                 onClick={onDelete}
                 className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-red-700"
