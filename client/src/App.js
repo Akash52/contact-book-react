@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import ContactState from './Context/Contact/contactState'
 import Footer from './Layout/Footer'
+import Loader from './Components/Loader'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
+
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
