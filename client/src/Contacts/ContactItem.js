@@ -13,12 +13,12 @@ const ContactItem = ({ contact }) => {
   return (
     <div className="flex items-center justify-center w-full px-6 mb-3 dark:bg-gray-900 ">
       <div>
-        <div className="flex flex-col justify-between h-64 max-w-sm px-4 py-5 bg-white border border-gray-400 rounded-lg shadow-xl cursor-pointer hover:shadow-md dark:bg-gray-800 ">
+        <div className="flex flex-col justify-between h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:shadow-md dark:bg-gray-800 ">
           <div className="flex justify-between">
             <h4 className="mb-3 font-bold text-gray-800 dark:text-gray-100">
               {name}
             </h4>
-            <span className="inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-semibold leading-none text-indigo-100 bg-blue-600 rounded">
+            <span className="inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-semibold leading-none text-indigo-100 bg-gray-700 rounded">
               {type.charAt(0).toUpperCase() + type.slice(1)}
             </span>
           </div>
