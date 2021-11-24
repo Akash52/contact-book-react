@@ -9,6 +9,8 @@ import {
   UPDATE_CONTACT,
   SET_CURRENT,
   CLEAR_CURRENT,
+  FILTER_CONTACT,
+  CLEAR_FILTER,
 } from '../types'
 
 const uuid = require('uuid')
@@ -39,6 +41,7 @@ const ContactState = (props) => {
       },
     ],
     current: null,
+    filtered: null,
   }
   const [state, dispatch] = useReducer(contactReducers, initialState)
   //ADD CONTACT
@@ -55,11 +58,13 @@ const ContactState = (props) => {
   }
 
   //SET CURRENT CONTACT
+
   const setCurrent = (contact) => {
     dispatch({ type: SET_CURRENT, payload: contact })
   }
 
   //CLEAR CURRENT CONTACT
+
   const clearCurrent = () => {
     dispatch({ type: CLEAR_CURRENT })
   }
@@ -72,18 +77,29 @@ const ContactState = (props) => {
 
   //FILTER COONTACTS
 
+  const filterContact = (text) => {
+    dispatch({ type: FILTER_CONTACT, payload: text })
+  }
+
   //CLEAR FLITER
+
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER })
+  }
 
   return (
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
         current: state.current,
+        filtered: state.filtered,
         addContact,
         deleteContact,
         setCurrent,
         clearCurrent,
         updateContact,
+        filterContact,
+        clearFilter,
       }}
     >
       {props.children}

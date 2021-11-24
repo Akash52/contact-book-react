@@ -11,7 +11,7 @@ const ContactItem = ({ contact }) => {
   }
 
   return (
-    <div className="flex items-center justify-center w-full px-6 mb-3 dark:bg-gray-900 ">
+    <div className="flex items-center justify-center w-full px-6 mt-4 mb-3 dark:bg-gray-900 ">
       <div>
         <div className="flex flex-col justify-between h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:shadow-md dark:bg-gray-800 ">
           <div className="flex justify-between">
