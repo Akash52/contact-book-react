@@ -1,3 +1,4 @@
+/* eslint-disable no-const-assign */
 import { useContext } from 'react'
 import ContactContext from '../Context/Contact/contactContext'
 const ContactItem = ({ contact }) => {
@@ -11,9 +12,9 @@ const ContactItem = ({ contact }) => {
   }
 
   return (
-    <div className="flex items-center justify-center w-full px-6 mt-4 mb-3 dark:bg-gray-900 ">
+    <div className="flex items-center justify-center w-full h-full px-4 py-4">
       <div>
-        <div className="flex flex-col justify-between h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:shadow-md dark:bg-gray-800 ">
+        <div className="flex flex-col justify-between w-full h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:shadow-md dark:bg-gray-800 ">
           <div className="flex justify-between">
             <h4 className="mb-3 font-bold text-gray-800 dark:text-gray-100">
               {name}
@@ -31,9 +32,9 @@ const ContactItem = ({ contact }) => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
               />
             </svg>
@@ -45,15 +46,15 @@ const ContactItem = ({ contact }) => {
           <div className="flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-gray-800"
+              className="w-5 h-5 text-gray-800"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
@@ -104,9 +105,9 @@ const ContactItem = ({ contact }) => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                   />
                 </svg>
