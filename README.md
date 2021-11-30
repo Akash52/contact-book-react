@@ -1,7 +1,7 @@
 # contact-book-react
 
 
-[Live Demo](https://createtodoapp.netlify.app/)
+[Live Demo](https://contactbookmng.netlify.app/)
 
 ## 🧐 About <a name = "about"></a>
 
