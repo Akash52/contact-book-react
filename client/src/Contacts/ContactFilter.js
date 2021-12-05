@@ -25,7 +25,7 @@ const ContactFilter = () => {
 
   return (
     <form>
-      <div className="w-full max-w-lg lg:max-w-xs ">
+      <div className="z-10 w-full max-w-sm mx-auto mb-4">
         <label htmlFor="search" className="sr-only">
           Search
         </label>
@@ -38,6 +38,7 @@ const ContactFilter = () => {
             className="block w-full py-2 pl-10 pr-3 leading-5 text-gray-300 placeholder-gray-400 bg-gray-700 border border-transparent rounded-md focus:outline-none sm:text-sm"
             placeholder="Search"
             type="Search"
+            autoComplete="off"
             onChange={onChange}
             ref={text}
           />

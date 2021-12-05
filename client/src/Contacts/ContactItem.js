@@ -1,5 +1,11 @@
 /* eslint-disable no-const-assign */
 import { useContext } from 'react'
+import {
+  MailIcon,
+  PhoneIcon,
+  TrashIcon,
+  PencilIcon,
+} from '@heroicons/react/solid'
 import ContactContext from '../Context/Contact/contactContext'
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext)
@@ -12,111 +18,81 @@ const ContactItem = ({ contact }) => {
   }
 
   return (
-    <div className="flex items-center justify-center w-full h-full px-4 py-4">
-      <div>
-        <div className="flex flex-col justify-between w-full h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:opacity-90 dark:bg-gray-800 ">
-          <div className="flex justify-between">
-            <h4 className="mb-3 font-bold text-gray-800 dark:text-gray-100">
-              {name}
-            </h4>
-            <span className="inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-semibold leading-none text-indigo-100 bg-gray-700 rounded">
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </span>
-          </div>
-          <div className="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 text-gray-800"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+    <>
+      <div className="flex items-center justify-center w-full mx-auto mt-2 mb-2 ">
+        <ul className="w-4/5 mx-auto transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-105 ">
+          <li className="col-span-1 transition duration-200 bg-white divide-y divide-gray-200 rounded-lg shadow-2xl hover:bg-gray-50">
+            <div className="flex items-center justify-between w-full p-6 space-x-6">
+              <div className="flex-1 truncate">
+                <div className="flex items-center space-x-3">
+                  <h3 className="text-sm font-medium text-gray-900 truncate">
+                    {name}
+                  </h3>
+                  <span className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
+                    {type}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm text-gray-500 truncate">{email}</p>
+              </div>
+              <img
+                className="flex-shrink-0 object-cover w-10 h-10 bg-gray-300 rounded-full"
+                src={
+                  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60'
+                }
+                alt="oops"
               />
-            </svg>
-            <span className="inline-flex items-center justify-center ml-1 text-sm font-semibold leading-none text-gray-600 rounded">
-              {email}
-            </span>
-          </div>
-
-          <div className="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 text-gray-800"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            <span className="inline-flex items-center justify-center ml-1 text-sm font-semibold leading-none text-gray-600 rounded">
-              {phone}
-            </span>
-          </div>
-
-          <p className="text-sm text-gray-800 dark:text-gray-100">
-            Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt,
-            neque porro quisquam est, quid malum, sensu iudicari, sed ut
-            alterum.
-          </p>
-
-          <div>
-            <div className="flex items-center justify-between text-gray-800">
-              <button
-                onClick={() => setCurrent(contact)}
-                className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-indigo-700"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="cursor-pointer icon icon-tabler icon-tabler-pencil"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" />
-                  <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
-                  <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
-                </svg>
-              </button>
-              <button
-                onClick={onDelete}
-                className="flex items-center justify-center w-8 h-8 text-white bg-gray-800 rounded-full hover:bg-red-700"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
-              </button>
             </div>
-          </div>
-        </div>
+            <div>
+              <div className="flex -mt-px divide-x divide-gray-200">
+                <div className="flex flex-1 w-0">
+                  <a
+                    href={`mailto:${email}`}
+                    className="relative inline-flex items-center justify-center flex-1 w-0 py-4 -mr-px text-sm font-medium text-gray-700 border border-transparent rounded-bl-lg hover:text-gray-500"
+                  >
+                    <MailIcon
+                      className="w-5 h-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-3">Email</span>
+                  </a>
+                </div>
+
+                <div className="flex flex-1 w-0 -ml-px">
+                  <a
+                    href={`tel:${phone}`}
+                    className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500"
+                  >
+                    <PhoneIcon
+                      className="w-5 h-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-3">Call</span>
+                  </a>
+                </div>
+                <div className="flex flex-1 w-0 -ml-px">
+                  <div className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500">
+                    <PencilIcon
+                      onClick={() => setCurrent(contact)}
+                      className="w-5 h-5 text-gray-400 cursor-pointer hover:text-blue-600 "
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-1 w-0 -ml-px">
+                  <div className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500">
+                    <TrashIcon
+                      onClick={() => onDelete()}
+                      className="w-5 h-5 text-gray-400 cursor-pointer hover:text-red-600 "
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </>
   )
 }
 

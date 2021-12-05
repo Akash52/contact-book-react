@@ -4,7 +4,7 @@ import Navbar from './Layout/Navbar'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import ContactState from './Context/Contact/contactState'
-import Footer from './Layout/Footer'
+
 import Page404 from './Pages/Page404'
 
 const App = () => {
@@ -18,7 +18,6 @@ const App = () => {
             <Route exact path="/about" component={About} />
             <Route path="*" exact={true} component={Page404} />
           </Switch>
-          <Footer />
         </Fragment>
       </Router>
     </ContactState>

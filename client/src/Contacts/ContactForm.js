@@ -38,14 +38,14 @@ const ContactForm = () => {
     }
   }
   return (
-    <div className="flex flex-col justify-center xs:mx-5 sm:m-3 sm:mx-4 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto xs:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="text-2xl font-extrabold text-center text-white">
+    <div className="flex flex-col justify-center m-2 xs:mx-5 sm:m-3 sm:mx-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md mx-auto">
+        <h2 className="text-2xl font-extrabold text-center text-white lg:text-3xl md:text-xl">
           {current ? 'Edit Contact' : 'Add Contact'}
         </h2>
       </div>
       <div className="mt-4 shadow-md sm:mx-auto sm:w-full hover:shadow-sm sm:max-w-md">
-        <div className="px-4 py-8 bg-gray-800 sm:rounded-lg sm:px-10">
+        <div className="px-4 py-8 transition duration-500 bg-gray-800 hover:opacity-95 sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={onSubmit} autoComplete="off">
             <div>
               <div className="mt-1">
