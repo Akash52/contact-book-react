@@ -21,15 +21,19 @@ const ContactItem = ({ contact }) => {
     <>
       <div className="flex items-center justify-center w-full mx-auto mt-2 mb-2 ">
         <ul className="w-4/5 mx-auto transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-105 ">
-          <li className="col-span-1 transition duration-200 bg-white divide-y divide-gray-200 rounded-lg shadow-2xl hover:bg-gray-50">
+          <li className="col-span-1 transition duration-200 bg-white divide-y divide-gray-200 rounded-lg shadow-2xl ">
             <div className="flex items-center justify-between w-full p-6 space-x-6">
               <div className="flex-1 truncate">
                 <div className="flex items-center space-x-3">
                   <h3 className="text-sm font-medium text-gray-900 truncate">
                     {name}
                   </h3>
-                  <span className="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">
-                    {type}
+                  <span
+                    className={
+                      'flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full'
+                    }
+                  >
+                    {type.charAt(0).toUpperCase() + type.slice(1)}
                   </span>
                 </div>
                 <p className="mt-1 text-sm text-gray-500 truncate">{email}</p>
