@@ -14,7 +14,7 @@ const ContactItem = ({ contact }) => {
   return (
     <div className="flex items-center justify-center w-full h-full px-4 py-4">
       <div>
-        <div className="flex flex-col justify-between w-full h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:shadow-md dark:bg-gray-800 ">
+        <div className="flex flex-col justify-between w-full h-64 max-w-sm px-4 py-5 shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 hover:opacity-90 dark:bg-gray-800 ">
           <div className="flex justify-between">
             <h4 className="mb-3 font-bold text-gray-800 dark:text-gray-100">
               {name}
