@@ -20,12 +20,12 @@ const ContactItem = ({ contact }) => {
   return (
     <>
       <div className="flex items-center justify-center w-full mx-auto mt-2 mb-2 ">
-        <ul className="w-4/5 mx-auto transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-105 ">
-          <li className="col-span-1 transition duration-200 bg-white divide-y divide-gray-200 rounded-lg shadow-2xl ">
+        <ul className="w-4/5 mx-auto transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-105">
+          <li className="col-span-1 transition duration-200 bg-gray-800 divide-y divide-gray-500 rounded-lg shadow-2xl ">
             <div className="flex items-center justify-between w-full p-6 space-x-6">
               <div className="flex-1 truncate">
                 <div className="flex items-center space-x-3">
-                  <h3 className="text-sm font-medium text-gray-900 truncate">
+                  <h3 className="text-sm font-medium text-gray-100 truncate">
                     {name}
                   </h3>
                   <span
@@ -47,17 +47,17 @@ const ContactItem = ({ contact }) => {
               />
             </div>
             <div>
-              <div className="flex -mt-px divide-x divide-gray-200">
+              <div className="flex -mt-px divide-x divide-gray-400">
                 <div className="flex flex-1 w-0">
                   <a
                     href={`mailto:${email}`}
                     className="relative inline-flex items-center justify-center flex-1 w-0 py-4 -mr-px text-sm font-medium text-gray-700 border border-transparent rounded-bl-lg hover:text-gray-500"
                   >
                     <MailIcon
-                      className="w-5 h-5 text-gray-400"
+                      className="w-5 h-5 text-gray-100"
                       aria-hidden="true"
                     />
-                    <span className="ml-3">Email</span>
+                    <span className="ml-3 text-gray-200">Email</span>
                   </a>
                 </div>
 
@@ -67,17 +67,17 @@ const ContactItem = ({ contact }) => {
                     className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500"
                   >
                     <PhoneIcon
-                      className="w-5 h-5 text-gray-400"
+                      className="w-5 h-5 text-gray-100"
                       aria-hidden="true"
                     />
-                    <span className="ml-3">Call</span>
+                    <span className="ml-3 text-gray-200">Call</span>
                   </a>
                 </div>
                 <div className="flex flex-1 w-0 -ml-px">
                   <div className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500">
                     <PencilIcon
                       onClick={() => setCurrent(contact)}
-                      className="w-5 h-5 text-gray-400 cursor-pointer hover:text-blue-600 "
+                      className="w-5 h-5 text-gray-100 cursor-pointer hover:text-blue-600 "
                       aria-hidden="true"
                     />
                   </div>
@@ -86,7 +86,7 @@ const ContactItem = ({ contact }) => {
                   <div className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500">
                     <TrashIcon
                       onClick={() => onDelete()}
-                      className="w-5 h-5 text-gray-400 cursor-pointer hover:text-red-600 "
+                      className="w-5 h-5 text-gray-100 cursor-pointer hover:text-red-600 "
                       aria-hidden="true"
                     />
                   </div>

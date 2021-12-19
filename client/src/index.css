@@ -4,6 +4,7 @@
 
 body {
   background-color: #111827;
+  scroll-behavior: smooth;
 }
 
 .item-enter {

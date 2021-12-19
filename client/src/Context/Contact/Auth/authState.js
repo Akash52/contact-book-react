@@ -11,6 +11,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  CLEAR_ERRORS,
 } from './../../types'
 
 const AuthState = (props) => {
@@ -22,6 +23,16 @@ const AuthState = (props) => {
     user: null,
   }
   const [state, dispatch] = useReducer(authReducers, initialState)
+
+  // Load User
+
+  // Register User
+
+  // Login User
+
+  // Logout User
+
+  // Clear Errors
 
   return (
     <AuthContext.Provider

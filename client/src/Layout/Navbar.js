@@ -45,12 +45,32 @@ const Navbar = () => {
                   <span className="ml-2">Home</span>
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link
+                  className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                  to="/register"
+                >
+                  <i className="text-lg text-white opacity-75 fas fa-user-plus"></i>
+                  <span className="ml-2">Register</span>
+                </Link>
+              </li>
+              <li className="nav-item ">
+                <Link
+                  className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                  to="/login"
+                >
+                  <i className="text-lg text-white opacity-75 fas fa-user"></i>
+                  <span className="ml-2">Login</span>
+                </Link>
+              </li>
+
               <li className="nav-item">
                 <Link
                   className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
                   to="/about"
                 >
-                  <i className="text-lg text-white opacity-75 fas fa-user-alt leading-lg"></i>
+                  <i className="text-lg text-white opacity-75 fas fa-question leading-lg"></i>
                   <span className="ml-2">About</span>
                 </Link>
               </li>
