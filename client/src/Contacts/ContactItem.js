@@ -21,7 +21,7 @@ const ContactItem = ({ contact }) => {
     <>
       <div className="flex items-center justify-center w-full mx-auto mt-2 mb-2 ">
         <ul className="w-4/5 mx-auto transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-105">
-          <li className="col-span-1 transition duration-200 bg-gray-800 divide-y divide-gray-500 rounded-lg shadow-2xl ">
+          <li className="col-span-1 transition duration-200 divide-y divide-gray-100 rounded-lg shadow-2xl bg-gradient-to-l from-yellow-500 via-pink-500 to-green-500 ">
             <div className="flex items-center justify-between w-full p-6 space-x-6">
               <div className="flex-1 truncate">
                 <div className="flex items-center space-x-3">
@@ -36,7 +36,7 @@ const ContactItem = ({ contact }) => {
                     {type.charAt(0).toUpperCase() + type.slice(1)}
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-gray-500 truncate">{email}</p>
+                <p className="mt-1 text-sm text-gray-300 truncate">{email}</p>
               </div>
               <img
                 className="flex-shrink-0 object-cover w-10 h-10 bg-gray-300 rounded-full"
@@ -77,7 +77,7 @@ const ContactItem = ({ contact }) => {
                   <div className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500">
                     <PencilIcon
                       onClick={() => setCurrent(contact)}
-                      className="w-5 h-5 text-gray-100 cursor-pointer hover:text-blue-600 "
+                      className="w-5 h-5 text-gray-100 cursor-pointer "
                       aria-hidden="true"
                     />
                   </div>
@@ -86,7 +86,7 @@ const ContactItem = ({ contact }) => {
                   <div className="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg hover:text-gray-500">
                     <TrashIcon
                       onClick={() => onDelete()}
-                      className="w-5 h-5 text-gray-100 cursor-pointer hover:text-red-600 "
+                      className="w-5 h-5 text-gray-100 cursor-pointer "
                       aria-hidden="true"
                     />
                   </div>

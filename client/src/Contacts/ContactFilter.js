@@ -25,7 +25,7 @@ const ContactFilter = () => {
 
   return (
     <form>
-      <div className="z-10 w-full max-w-sm mx-auto mb-4">
+      <div className="z-10 w-full max-w-sm mx-auto ">
         <label htmlFor="search" className="sr-only">
           Search
         </label>

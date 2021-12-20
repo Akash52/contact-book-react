@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import ContactContext from '../Context/Contact/contactContext'
+import NoContact from '../Pages/NoContact'
 import ContactItem from './ContactItem'
 
 const Contacts = () => {
@@ -10,11 +11,7 @@ const Contacts = () => {
   const { contacts, filtered } = contactContext
 
   if (contacts.length === 0) {
-    return (
-      <p class="max-w-2xl flex justify-center mx-auto mt-8 text-xl font-medium text-white">
-        Please add a Contact!
-      </p>
-    )
+    return <NoContact />
   }
 
   return (

@@ -4,11 +4,12 @@ import Navbar from './Layout/Navbar'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import ContactState from './Context/Contact/contactState'
-import AuthState from './Context/Contact/Auth/authState'
+import AuthState from './Context/Auth/authState'
 
 import Page404 from './Pages/Page404'
 import Register from './Components/Auth/Register'
 import Login from './Components/Auth/Login'
+import Footer from './Layout/Footer'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <Route exact path="/login" component={Login} />
               <Route path="*" exact={true} component={Page404} />
             </Switch>
+            <Footer />
           </Fragment>
         </Router>
       </ContactState>
